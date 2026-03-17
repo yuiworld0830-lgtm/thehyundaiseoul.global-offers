@@ -2,109 +2,213 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Exclusive Offers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Global Guests Special Offers</title>
     <style>
-        /* 기본 디자인 (시안 느낌에 맞춰 깔끔하고 모던하게) */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 30px; }
-        
-        /* 다국어 폰트 강제 적용 (깨짐 방지) */
-        :lang(en) { font-family: -apple-system, sans-serif; }
+        /* 기본 리셋 및 폰트 (언어별 깨짐 완벽 방지) */
+        :root {
+            --bg-dark: #120A2B;
+            --purple-main: #622EF1;
+            --purple-glow: #9E7BFF;
+            --card-bg: #FFFFFF;
+            --text-dark: #1F1F1F;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at top right, #2c125e 0%, var(--bg-dark) 50%);
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 각 언어별 전용 폰트 강제 매칭 */
+        :lang(ko) { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
         :lang(zh-Hant) { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
         :lang(zh-Hans) { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
-        :lang(ja) { font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif; }
+        :lang(ja) { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; }
 
-        /* 탭 버튼 스타일 */
-        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .tab-btn { background: transparent; border: none; font-size: 16px; font-weight: bold; color: #888; cursor: pointer; padding: 10px 20px; transition: all 0.3s ease; }
-        .tab-btn:hover { color: #333; }
-        .tab-btn.active { color: #000; border-bottom: 3px solid #000; }
+        /* 상단 헤더 영역 (시안 일치) */
+        .header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+        .header h1 {
+            font-size: 32px; font-weight: 900; margin: 0;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #fff, #D9C5FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header h2 {
+            font-size: 18px; font-weight: 500; margin: 5px 0 15px; color: #E0D4FF; letter-spacing: 2px;
+        }
+        .date-badge {
+            display: inline-block;
+            background: rgba(158, 123, 255, 0.2);
+            border: 1px solid rgba(158, 123, 255, 0.5);
+            color: #E0D4FF;
+            padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;
+        }
 
-        /* 테이블 스타일 */
-        table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 15px; }
-        th, td { border-bottom: 1px solid #ddd; padding: 15px 10px; text-align: left; }
-        th { background-color: #f9f9f9; font-weight: bold; color: #555; }
-        tr:hover { background-color: #fcfcfc; }
+        /* 탭 메뉴 */
+        .tabs {
+            display: flex; gap: 10px; padding: 0 15px 20px;
+            overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;
+        }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tab-btn {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc; padding: 10px 20px; border-radius: 25px;
+            font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--purple-main); color: #fff; border-color: var(--purple-main);
+            box-shadow: 0 0 15px rgba(98, 46, 241, 0.6);
+        }
+
+        /* 콘텐츠 래퍼 */
+        .container { padding: 0 15px 50px; max-width: 600px; margin: 0 auto; }
+
+        /* 카테고리 카드 (흰색 바탕의 모바일 리스트형) */
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+        .category-header {
+            background: #F4F1FF;
+            padding: 15px 20px;
+            border-bottom: 1px solid #EBE5FF;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .category-title { color: var(--purple-main); font-weight: 800; font-size: 16px; }
+        .category-loc { color: #8A65E9; font-size: 13px; font-weight: bold; background: #fff; padding: 3px 10px; border-radius: 12px; }
+
+        /* 개별 아이템 리스트 */
+        .item-list { padding: 0 20px; }
+        .item {
+            padding: 18px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: var(--text-dark);
+        }
+        .item:last-child { border-bottom: none; }
         
-        .header-title { text-align: center; margin-bottom: 30px; }
-        .header-title h1 { font-size: 28px; margin: 0; }
-        .header-title p { color: #666; margin-top: 5px; }
+        .item-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .item-brand { font-size: 16px; font-weight: bold; line-height: 1.3; padding-right: 10px; }
+        .item-date { 
+            font-size: 12px; color: #666; background: #F5F5F5; 
+            padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+        }
+        .item-desc { font-size: 14px; color: #555; line-height: 1.45; word-break: keep-all; }
+
+        /* 유의사항 */
+        .notice-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px dashed rgba(255,255,255,0.2);
+            border-radius: 12px; padding: 20px; margin-top: 10px;
+        }
+        .notice-title { font-size: 14px; font-weight: bold; color: #E0D4FF; margin-bottom: 10px; }
+        .notice-list { margin: 0; padding-left: 18px; font-size: 13px; color: #bbb; line-height: 1.5; }
+        .notice-list li { margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header-title">
-        <h1>Special Offers</h1>
-        <p>Exclusive for Global Guests</p>
+    <div class="header">
+        <h1 id="head-title">EXCLUSIVE FOR</h1>
+        <h2 id="head-sub">GLOBAL GUESTS</h2>
+        <div class="date-badge" id="head-date">MAR 20 - APR 12</div>
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="loadData('en')">English</button>
-        <button class="tab-btn" onclick="loadData('tc')">中文(繁體)</button>
-        <button class="tab-btn" onclick="loadData('sc')">中文(??)</button>
-        <button class="tab-btn" onclick="loadData('ja')">日本語</button>
+        <button class="tab-btn active" onclick="loadContent('ko')">한국어</button>
+        <button class="tab-btn" onclick="loadContent('en')">English</button>
+        <button class="tab-btn" onclick="loadContent('tc')">中文(繁體)</button>
+        <button class="tab-btn" onclick="loadContent('sc')">中文(简体)</button>
+        <button class="tab-btn" onclick="loadContent('ja')">日本語</button>
     </div>
 
-    <table>
-        <thead>
-            <tr id="table-header">
-                </tr>
-        </thead>
-        <tbody id="table-body">
-            </tbody>
-    </table>
-</div>
+    <div class="container">
+        <div id="content-wrap">
+            </div>
 
-<script>
-    let globalOffers = {};
+        <div class="notice-box">
+            <div class="notice-title" id="notice-title">[Notice]</div>
+            <ul class="notice-list" id="notice-list">
+                </ul>
+        </div>
+    </div>
 
-    // 1. 페이지가 열리면 data.json 파일을 불러옵니다 (Fetch API)
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            globalOffers = data;
-            loadData('en'); // 처음에는 영어를 기본으로 띄움
-        })
-        .catch(error => console.error('데이터를 불러오는 중 오류 발생:', error));
+    <script>
+        let globalData = {};
 
-    // 2. 탭을 누르면 실행되는 함수
-    function loadData(lang) {
-        // 탭 버튼 색상 변경
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        event.currentTarget.classList.add('active');
+        // 1. JSON 데이터 불러오기
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                globalData = data;
+                loadContent('en'); // 처음 열렸을 때는 영어가 기본
+            })
+            .catch(err => {
+                console.error("데이터를 불러오지 못했습니다.", err);
+                document.getElementById('content-wrap').innerHTML = "<p style='text-align:center;'>데이터를 불러오는 중 문제가 발생했습니다.</p>";
+            });
 
-        // 언어별 테이블 헤더(제목) 설정
-        const headers = {
-            'en': ['Category', 'Location', 'Brand', 'Period', 'Details'],
-            'tc': ['分類', '位置', '品牌', '期間', '內容'],
-            'sc': ['分?', '位置', '品牌', '期?', '?容'],
-            'ja': ['?分', '位置', 'ブランド', '期間', '?容']
-        };
+        // 2. 탭 클릭 시 화면 업데이트 함수
+        function loadContent(lang) {
+            // 버튼 활성화 스타일 변경
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
 
-        const headerHtml = headers[lang].map(text => `<th>${text}</th>`).join('');
-        document.getElementById('table-header').innerHTML = headerHtml;
+            // 언어 폰트 속성 적용
+            const langCode = lang === 'tc' ? 'zh-Hant' : (lang === 'sc' ? 'zh-Hans' : lang);
+            document.documentElement.lang = langCode;
 
-        // 언어 속성(lang) 변경 (폰트 깨짐 방지용)
-        const langCode = lang === 'tc' ? 'zh-Hant' : (lang === 'sc' ? 'zh-Hans' : lang);
-        document.body.setAttribute('lang', langCode);
+            const selectedData = globalData[lang];
+            if(!selectedData) return;
 
-        // JSON 데이터에서 해당 언어의 목록을 가져와서 표 그리기
-        const offers = globalOffers[lang] || [];
-        const bodyHtml = offers.map(item => `
-            <tr>
-                <td>${item.category}</td>
-                <td>${item.location}</td>
-                <td><strong>${item.brand}</strong></td>
-                <td>${item.period}</td>
-                <td>${item.details}</td>
-            </tr>
-        `).join('');
-        
-        document.getElementById('table-body').innerHTML = bodyHtml;
-    }
-</script>
+            // 상단 텍스트 업데이트
+            document.getElementById('head-title').innerText = selectedData.head_title;
+            document.getElementById('head-sub').innerText = selectedData.head_sub;
+            document.getElementById('head-date').innerText = selectedData.head_date;
 
+            // 유의사항 업데이트
+            document.getElementById('notice-title').innerText = selectedData.notice_title;
+            document.getElementById('notice-list').innerHTML = selectedData.notice_list.map(text => `<li>${text}</li>`).join('');
+
+            // 카테고리별 리스트 생성
+            let htmlContent = '';
+            
+            selectedData.sections.forEach(section => {
+                let itemsHtml = section.items.map(item => `
+                    <div class="item">
+                        <div class="item-top">
+                            <div class="item-brand">${item.brand}</div>
+                            <div class="item-date">${item.date}</div>
+                        </div>
+                        <div class="item-desc">${item.desc}</div>
+                    </div>
+                `).join('');
+
+                htmlContent += `
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-title">${section.category}</span>
+                            <span class="category-loc">${section.location}</span>
+                        </div>
+                        <div class="item-list">
+                            ${itemsHtml}
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('content-wrap').innerHTML = htmlContent;
+        }
+    </script>
 </body>
 </html>
