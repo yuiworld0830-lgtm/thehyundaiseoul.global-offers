@@ -6,83 +6,32 @@
     <title>Global Guests Special Offers</title>
     <style>
         /* 보라색 우주 테마 배경 */
-        :root {
-            --bg-dark: #120A2B;
-            --purple-main: #622EF1;
-        }
-
-        body {
-            margin: 0; padding: 0;
-            background-color: var(--bg-dark);
-            background-image: radial-gradient(circle at top right, #381b7a 0%, var(--bg-dark) 60%);
-            color: #fff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* 폰트 깨짐 방지 */
+        :root { --bg-dark: #120A2B; --purple-main: #622EF1; }
+        body { margin: 0; padding: 0; background-color: var(--bg-dark); background-image: radial-gradient(circle at top right, #381b7a 0%, var(--bg-dark) 60%); color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
         :lang(ko) { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
         :lang(zh-Hant) { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
         :lang(zh-Hans) { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
         :lang(ja) { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; }
-
-        /* 상단 헤더 */
-        .header { text-align: center; padding: 40px 20px 20px; }
-        .header h1 {
-            font-size: 30px; font-weight: 900; margin: 0; letter-spacing: 1px;
-            background: linear-gradient(to right, #fff, #D9C5FF);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .header h2 { font-size: 16px; font-weight: 500; margin: 5px 0 15px; color: #E0D4FF; letter-spacing: 2px; }
-        .date-badge {
-            display: inline-block; background: rgba(158, 123, 255, 0.2);
-            border: 1px solid rgba(158, 123, 255, 0.5); color: #E0D4FF;
-            padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;
-        }
-
-        /* 탭 메뉴 */
-        .tabs {
-            display: flex; gap: 8px; padding: 0 15px 20px; justify-content: center;
-            overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;
-        }
-        .tab-btn {
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-            color: #ccc; padding: 10px 18px; border-radius: 25px;
-            font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.3s;
-        }
-        .tab-btn.active {
-            background: var(--purple-main); color: #fff; border-color: var(--purple-main);
-            box-shadow: 0 0 15px rgba(98, 46, 241, 0.6);
-        }
-
-        /* 표 영역 (좌우 스크롤 가능) */
-        .container { padding: 0 15px 50px; max-width: 1000px; margin: 0 auto; }
-        .table-wrapper {
-            width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
-            background: rgba(0, 0, 0, 0.2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);
-        }
-        table {
-            width: 100%; min-width: 700px; border-collapse: collapse; text-align: center;
-        }
-        th, td {
-            padding: 12px 10px; border: 1px solid rgba(255,255,255,0.15);
-            font-size: 13px; line-height: 1.4;
-        }
-        th {
-            background: rgba(98, 46, 241, 0.4); color: #E0D4FF; font-weight: bold;
-            position: sticky; top: 0;
-        }
-        td { color: #f4f4f4; }
         
-        /* 표 내부 정렬 및 강조 */
+        .header { text-align: center; padding: 40px 20px 20px; }
+        .header h1 { font-size: 30px; font-weight: 900; margin: 0; letter-spacing: 1px; background: linear-gradient(to right, #fff, #D9C5FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header h2 { font-size: 16px; font-weight: 500; margin: 5px 0 15px; color: #E0D4FF; letter-spacing: 2px; }
+        .date-badge { display: inline-block; background: rgba(158, 123, 255, 0.2); border: 1px solid rgba(158, 123, 255, 0.5); color: #E0D4FF; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        
+        .tabs { display: flex; gap: 8px; padding: 0 15px 20px; justify-content: center; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .tab-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #ccc; padding: 10px 18px; border-radius: 25px; font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .tab-btn.active { background: var(--purple-main); color: #fff; border-color: var(--purple-main); box-shadow: 0 0 15px rgba(98, 46, 241, 0.6); }
+        
+        .container { padding: 0 15px 50px; max-width: 1000px; margin: 0 auto; }
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; background: rgba(0, 0, 0, 0.2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); }
+        table { width: 100%; min-width: 700px; border-collapse: collapse; text-align: center; }
+        th, td { padding: 12px 10px; border: 1px solid rgba(255,255,255,0.15); font-size: 13px; line-height: 1.4; }
+        th { background: rgba(98, 46, 241, 0.4); color: #E0D4FF; font-weight: bold; position: sticky; top: 0; }
+        td { color: #f4f4f4; }
         .text-left { text-align: left; }
         .brand-name { font-weight: bold; color: #fff; font-size: 14px; }
         
-        /* 유의사항 */
-        .notice-box {
-            background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2);
-            border-radius: 12px; padding: 20px; margin-top: 20px;
-        }
+        .notice-box { background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 20px; margin-top: 20px; }
         .notice-title { font-size: 14px; font-weight: bold; color: #E0D4FF; margin-bottom: 10px; }
         .notice-list { margin: 0; padding-left: 18px; font-size: 13px; color: #bbb; }
         .notice-list li { margin-bottom: 5px; }
@@ -91,80 +40,102 @@
 <body>
 
     <div class="header">
-        <h1 id="head-title">EXCLUSIVE FOR</h1>
-        <h2 id="head-sub">GLOBAL GUESTS</h2>
-        <div class="date-badge" id="head-date">MAR 20 - APR 12</div>
+        <h1>EXCLUSIVE FOR</h1>
+        <h2>GLOBAL GUESTS</h2>
+        <div class="date-badge">MAR 20 - APR 12</div>
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="loadContent('en')">English</button>
-        <button class="tab-btn" onclick="loadContent('tc')">中文(繁體)</button>
-        <button class="tab-btn" onclick="loadContent('sc')">中文(简体)</button>
-        <button class="tab-btn" onclick="loadContent('ja')">日本語</button>
+        <button class="tab-btn active" id="btn-en" onclick="loadContent('en')">English</button>
+        <button class="tab-btn" id="btn-tc" onclick="loadContent('tc')">中文(繁體)</button>
+        <button class="tab-btn" id="btn-sc" onclick="loadContent('sc')">中文(简体)</button>
+        <button class="tab-btn" id="btn-ja" onclick="loadContent('ja')">日本語</button>
     </div>
 
     <div class="container">
         <div class="table-wrapper">
             <table>
                 <thead>
-                    <tr id="thead-row">
-                        </tr>
+                    <tr id="thead-row"></tr>
                 </thead>
-                <tbody id="tbody">
-                    </tbody>
+                <tbody id="tbody"></tbody>
             </table>
         </div>
-
         <div class="notice-box">
             <div class="notice-title" id="notice-title">[Notice]</div>
-            <ul class="notice-list" id="notice-list">
-                </ul>
+            <ul class="notice-list" id="notice-list"></ul>
         </div>
     </div>
 
     <script>
         let globalData = {};
 
-        // data.json 불러오기
-        fetch('data.json')
+        const uiText = {
+            'en': { headers: ["Category", "Location", "Brand", "Period", "Details"], noticeTitle: "[Notice]", notice: ["Applicable to foreign passport holders.", "Gifts are limited in quantity."] },
+            'tc': { headers: ["分類", "位置", "品牌", "期間", "內容"], noticeTitle: "[注意事項]", notice: ["僅適用於持有外國護照之顧客。", "贈品數量有限，送完為止。"] },
+            'sc': { headers: ["分类", "位置", "品牌", "期间", "内容"], noticeTitle: "[注意事项]", notice: ["仅适用于持有外国护照的顾客。", "赠品数量有限，送完为止。"] },
+            'ja': { headers: ["区分", "位置", "ブランド", "期間", "内容"], noticeTitle: "[注意事項]", notice: ["外国パスポートをお持ちの方にのみ適用。", "贈呈品は数量限定のため、なくなり次第終了。"] }
+        };
+
+        // 스마트폰의 강력한 캐시를 뚫고 항상 최신 데이터를 불러옵니다.
+        fetch('data.json?v=' + new Date().getTime())
             .then(res => res.json())
             .then(data => {
                 globalData = data;
-                loadContent('en'); // 영어 기본 노출
+                loadContent('en'); 
             })
             .catch(err => console.error("데이터 로드 실패:", err));
 
         function loadContent(lang) {
-            // 버튼 활성화
+            // 모바일 에러의 원인이었던 event 객체를 삭제하고 더 안전한 방식으로 변경했습니다.
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            const activeBtn = document.getElementById('btn-' + lang);
+            if(activeBtn) activeBtn.classList.add('active');
 
-            // 폰트 언어 설정
             const langCode = lang === 'tc' ? 'zh-Hant' : (lang === 'sc' ? 'zh-Hans' : lang);
             document.documentElement.lang = langCode;
 
             const d = globalData[lang];
             if(!d) return;
 
-            // 유의사항 업데이트
-            document.getElementById('notice-title').innerText = d.notice_title;
-            document.getElementById('notice-list').innerHTML = d.notice_list.map(text => `<li>${text}</li>`).join('');
+            const textData = uiText[lang] || uiText['en'];
+            document.getElementById('notice-title').innerText = d.notice_title || textData.noticeTitle;
+            
+            const notices = d.notice_list || textData.notice;
+            document.getElementById('notice-list').innerHTML = notices.map(n => `<li>${n}</li>`).join('');
+            document.getElementById('thead-row').innerHTML = textData.headers.map(h => `<th>${h}</th>`).join('');
 
-            // 표 헤더(구분, 위치 등) 생성
-            document.getElementById('thead-row').innerHTML = d.headers.map(h => `<th>${h}</th>`).join('');
+            let bodyHtml = '';
+            
+            if (d.items) {
+                d.items.forEach(item => {
+                    bodyHtml += `
+                    <tr>
+                        <td style="color: #bbb;">${item.cat || ''}</td>
+                        <td>${item.loc || ''}</td>
+                        <td class="brand-name text-left">${item.brand || ''}</td>
+                        <td style="font-size: 12px;">${item.date || ''}</td>
+                        <td class="text-left">${item.desc || ''}</td>
+                    </tr>`;
+                });
+            } else if (d.sections) {
+                d.sections.forEach(sec => {
+                    if(sec.items) {
+                        sec.items.forEach(item => {
+                            bodyHtml += `
+                            <tr>
+                                <td style="color: #bbb;">${sec.category || ''}</td>
+                                <td>${sec.location || ''}</td>
+                                <td class="brand-name text-left">${item.brand || ''}</td>
+                                <td style="font-size: 12px;">${item.date || ''}</td>
+                                <td class="text-left">${item.desc || ''}</td>
+                            </tr>`;
+                        });
+                    }
+                });
+            }
 
-            // 표 데이터 생성
-            let bodyHtml = d.items.map(item => `
-                <tr>
-                    <td style="color: #bbb;">${item.cat}</td>
-                    <td>${item.loc}</td>
-                    <td class="brand-name text-left">${item.brand}</td>
-                    <td style="font-size: 12px;">${item.date}</td>
-                    <td class="text-left">${item.desc}</td>
-                </tr>
-            `).join('');
-
-            document.getElementById('tbody').innerHTML = bodyHtml;
+            document.getElementById('tbody').innerHTML = bodyHtml || '<tr><td colspan="5">데이터가 없습니다.</td></tr>';
         }
     </script>
 </body>
