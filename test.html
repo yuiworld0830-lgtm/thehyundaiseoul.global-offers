@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Special Offers Exclusive for Global Guests</title>
     <style>
-        /* 다국어(한/중/일/영) 지원 폰트 설정 */
+        /* 기본 설정 */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'PingFang SC', 'Microsoft YaHei', 'PingFang TC', 'Microsoft JhengHei', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', sans-serif;
             line-height: 1.5;
             color: #333;
             max-width: 1000px;
@@ -16,12 +15,21 @@
             padding: 15px;
             -webkit-text-size-adjust: none;
         }
+        
+        /* ?? [핵심 해결] 각 언어별 전용 폰트 강제 지정 ?? */
+        :lang(ko) { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; }
+        :lang(en) { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        :lang(zh-Hant) { font-family: 'PingFang TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif; }
+        :lang(zh-Hans) { font-family: 'PingFang SC', 'Microsoft YaHei', '微?雅黑', sans-serif; }
+        :lang(ja) { font-family: 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Meiryo', 'メイリオ', sans-serif; }
+
         h1 {
             font-size: 24px;
             color: #000;
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
             text-align: center;
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
         }
         h1 span {
             display: block;
@@ -31,7 +39,7 @@
             font-weight: normal;
         }
         
-        /* 탭 영역 (모바일 스크롤 지원) */
+        /* 탭 영역 */
         .tabs {
             display: flex;
             justify-content: center;
@@ -40,81 +48,34 @@
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
         }
         .tab-btn {
-            background: none;
-            border: none;
-            padding: 12px 18px;
-            font-size: 15px;
-            cursor: pointer;
-            color: #888;
-            font-weight: bold;
-            transition: 0.3s;
+            background: none; border: none; padding: 12px 18px; font-size: 15px;
+            cursor: pointer; color: #888; font-weight: bold; transition: 0.3s;
         }
-        .tab-btn.active {
-            color: #000;
-            border-bottom: 3px solid #000;
-        }
+        .tab-btn.active { color: #000; border-bottom: 3px solid #000; }
 
-        /* 표 영역 (모바일 가로 스크롤 및 단어 끊어짐 방지) */
+        /* 표 영역 */
         .table-container {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin-top: 15px;
-            border: 1px solid #ddd;
+            width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+            margin-top: 15px; border: 1px solid #ddd;
         }
-        table {
-            width: 100%;
-            min-width: 700px;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
+        table { width: 100%; min-width: 700px; border-collapse: collapse; font-size: 14px; }
         th, td {
-            border: 1px solid #ddd;
-            padding: 12px 8px;
-            text-align: center;
-            word-break: keep-all; /* 단어 단위로만 줄바꿈 (단어 쪼개짐 방지) */
-            overflow-wrap: break-word;
-            line-height: 1.4;
+            border: 1px solid #ddd; padding: 12px 8px; text-align: center;
+            word-break: keep-all; overflow-wrap: break-word; line-height: 1.4;
         }
-        th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        }
-        td.content-left {
-            text-align: left;
-            min-width: 250px;
-        }
-        .brand-col {
-            font-weight: bold;
-            min-width: 130px;
-        }
+        th { background-color: #f8f9fa; font-weight: bold; }
+        td.content-left { text-align: left; min-width: 250px; }
+        .brand-col { font-weight: bold; min-width: 130px; }
 
-        .lang-content {
-            display: none;
-        }
-        .lang-content.active {
-            display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .notice-box {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 13px;
-            margin-top: 20px;
-        }
-        .notice-box ul {
-            margin: 0;
-            padding-left: 18px;
-        }
+        .notice-box { background-color: #f8f9fa; padding: 15px; border-radius: 5px; font-size: 13px; margin-top: 20px; }
+        .notice-box ul { margin: 0; padding-left: 18px; }
     </style>
 </head>
 <body>

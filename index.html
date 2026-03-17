@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Exclusive Offers</title>
+    <style>
+        /* 기본 디자인 (시안 느낌에 맞춰 깔끔하고 모던하게) */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 30px; }
+        
+        /* 다국어 폰트 강제 적용 (깨짐 방지) */
+        :lang(en) { font-family: -apple-system, sans-serif; }
+        :lang(zh-Hant) { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
+        :lang(zh-Hans) { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+        :lang(ja) { font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif; }
+
+        /* 탭 버튼 스타일 */
+        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .tab-btn { background: transparent; border: none; font-size: 16px; font-weight: bold; color: #888; cursor: pointer; padding: 10px 20px; transition: all 0.3s ease; }
+        .tab-btn:hover { color: #333; }
+        .tab-btn.active { color: #000; border-bottom: 3px solid #000; }
+
+        /* 테이블 스타일 */
+        table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 15px; }
+        th, td { border-bottom: 1px solid #ddd; padding: 15px 10px; text-align: left; }
+        th { background-color: #f9f9f9; font-weight: bold; color: #555; }
+        tr:hover { background-color: #fcfcfc; }
+        
+        .header-title { text-align: center; margin-bottom: 30px; }
+        .header-title h1 { font-size: 28px; margin: 0; }
+        .header-title p { color: #666; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-title">
+        <h1>Special Offers</h1>
+        <p>Exclusive for Global Guests</p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="loadData('en')">English</button>
+        <button class="tab-btn" onclick="loadData('tc')">中文(繁體)</button>
+        <button class="tab-btn" onclick="loadData('sc')">中文(??)</button>
+        <button class="tab-btn" onclick="loadData('ja')">日本語</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr id="table-header">
+                </tr>
+        </thead>
+        <tbody id="table-body">
+            </tbody>
+    </table>
+</div>
+
+<script>
+    let globalOffers = {};
+
+    // 1. 페이지가 열리면 data.json 파일을 불러옵니다 (Fetch API)
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            globalOffers = data;
+            loadData('en'); // 처음에는 영어를 기본으로 띄움
+        })
+        .catch(error => console.error('데이터를 불러오는 중 오류 발생:', error));
+
+    // 2. 탭을 누르면 실행되는 함수
+    function loadData(lang) {
+        // 탭 버튼 색상 변경
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+
+        // 언어별 테이블 헤더(제목) 설정
+        const headers = {
+            'en': ['Category', 'Location', 'Brand', 'Period', 'Details'],
+            'tc': ['分類', '位置', '品牌', '期間', '內容'],
+            'sc': ['分?', '位置', '品牌', '期?', '?容'],
+            'ja': ['?分', '位置', 'ブランド', '期間', '?容']
+        };
+
+        const headerHtml = headers[lang].map(text => `<th>${text}</th>`).join('');
+        document.getElementById('table-header').innerHTML = headerHtml;
+
+        // 언어 속성(lang) 변경 (폰트 깨짐 방지용)
+        const langCode = lang === 'tc' ? 'zh-Hant' : (lang === 'sc' ? 'zh-Hans' : lang);
+        document.body.setAttribute('lang', langCode);
+
+        // JSON 데이터에서 해당 언어의 목록을 가져와서 표 그리기
+        const offers = globalOffers[lang] || [];
+        const bodyHtml = offers.map(item => `
+            <tr>
+                <td>${item.category}</td>
+                <td>${item.location}</td>
+                <td><strong>${item.brand}</strong></td>
+                <td>${item.period}</td>
+                <td>${item.details}</td>
+            </tr>
+        `).join('');
+        
+        document.getElementById('table-body').innerHTML = bodyHtml;
+    }
+</script>
+
+</body>
+</html>
