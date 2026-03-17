@@ -1,18 +1,347 @@
 {
-  "en": [
-    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "Free passport case for foreign customers with purchase" },
-    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "10% off when buying 2 or more items" }
-  ],
-  "tc": [
-    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "外國顧客購買?贈護照夾" },
-    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "購買2件以上享9折" }
-  ],
-  "sc": [
-    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "外??客?????照?" },
-    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "??2件以上享9折" }
-  ],
-  "ja": [
-    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "外?人購入顧客にパスポ?トケ?ス贈呈" },
-    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "2点以上のご購入で10%OFF" }
-  ]
+  "ko": {
+    "head_title": "EXCLUSIVE FOR",
+    "head_sub": "GLOBAL GUESTS",
+    "head_date": "MAR 20 - APR 12",
+    "notice_title": "[유의사항]",
+    "notice_list": [
+      "해외 여권 소지자 및 즉시환급 고객에 한하여 적용 가능합니다.",
+      "모든 혜택은 일부 품목에 한해 제외될 수 있습니다.",
+      "증정품은 한정수량으로 소진 시 예고 없이 종료될 수 있습니다."
+    ],
+    "sections": [
+      {
+        "category": "YOUNG FASHION & LIFE",
+        "location": "B2",
+        "items": [
+          { "brand": "데우스 엑스 마키나", "date": "3/20~4/4", "desc": "외국인 구매고객 여권케이스 증정 (100개 한정, 여권 소지 고객)" },
+          { "brand": "시스티나", "date": "3/20~3/26", "desc": "봄 상품 10% 할인" },
+          { "brand": "HDEX", "date": "3/9~4/4", "desc": "인스타그램 팔로우 시 10% 할인" },
+          { "brand": "LISTENING ROOM by ODE", "date": "3/20~4/4", "desc": "매장 내 BTS LP 또는 CD 5% 할인" },
+          { "brand": "스미스앤레더", "date": "3/20~4/4", "desc": "제품 구매 시 러기지택 증정" },
+          { "brand": "CK진", "date": "3/20~4/4", "desc": "전 품목 10% 할인" },
+          { "brand": "캘빈클라인 언더웨어", "date": "3/20~4/4", "desc": "전 품목 10% 할인" },
+          { "brand": "시티브리즈", "date": "3/20~4/4", "desc": "전 품목 10% 할인" },
+          { "brand": "세터", "date": "3/20~3/31", "desc": "26봄 신상품 최대 20% 할인 (여름 상품 제외)" },
+          { "brand": "구호플러스", "date": "3/20~3/31", "desc": "인스타그램 스토리 업로드 및 공식 계정 태그 시 5% 할인" },
+          { "brand": "OIC", "date": "3/20~4/4", "desc": "20만원 이상 구매 시 양말 증정" },
+          { "brand": "락피쉬웨더웨어", "date": "3/20~4/4", "desc": "아일릿 콜라보 제외 메리제인 스니커즈 10% 할인" },
+          { "brand": "마리떼프랑소와저버", "date": "3/20~4/4", "desc": "26SS 브랜드 주력 상품 최대 30% 할인 (주차별 품목 변경)" },
+          { "brand": "론론", "date": "3/20~3/31", "desc": "전 상품 20% 할인" },
+          { "brand": "스탠드오일", "date": "3/25~3/31", "desc": "기존 캐리오버 슈즈 라인 프로모션 (신규 5% / 러닝 10%)" },
+          { "brand": "드파운드", "date": "3/27~4/2", "desc": "20만원 이상 구매 시 10% 추가 할인" },
+          { "brand": "유니폼브릿지", "date": "3/20~3/31", "desc": "26SS 10% 추가 할인" },
+          { "brand": "베흐트", "date": "3/23~3/31", "desc": "전제품 7% OFF, 신규 시계 2종 17% OFF / 구매 시 미니 틴케이스 증정" },
+          { "brand": "베흐트", "date": "3/20~4/4", "desc": "위챗페이 / 알리페이 50만원 이상 구매 시 추가 5% OFF" }
+        ]
+      },
+      {
+        "category": "COSMETICS",
+        "location": "1F",
+        "items": [
+          { "brand": "나스", "date": "3/20~3/25, 4/1~4/12", "desc": "2가지 이상 구매시 10% off (신상품 제외)" },
+          { "brand": "설화수", "date": "3/20~4/12", "desc": "30/60/100만 이상 구매시 5% 상품권 증정 (*외국인 고객 한함, 중복 불가)<br>20만원 이상 구매 시 여행용 10종 증정" },
+          { "brand": "산타마리아노벨라", "date": "3/20~4/12", "desc": "전 구매 시 바디워시 8ml 증정, 기획 세트 구매 시 바디샘플 32ml(4종) 증정" },
+          { "brand": "산타마리아노벨라", "date": "3/20~4/5", "desc": "글로벌 고객 팝업스토어 내 제품 구매 시 EDC 2ml 추가 증정 (팝업기간)" }
+        ]
+      },
+      {
+        "category": "HOME DÉCOR",
+        "location": "4F",
+        "items": [
+          { "brand": "레고트", "date": "3/20~4/12", "desc": "트래블 신상품 10~20% 할인" },
+          { "brand": "헤리터", "date": "3/20~4/12", "desc": "인기 상품 5~10% 할인" }
+        ]
+      },
+      {
+        "category": "KIDS & BABY",
+        "location": "5F",
+        "items": [
+          { "brand": "압소바", "date": "3/20~4/12", "desc": "전상품 20~25% 할인" },
+          { "brand": "에뜨와", "date": "3/20~4/12", "desc": "10만원 이상 구매 시 사은품 (수트케이스 or 리우드 사만사 바스켓)" },
+          { "brand": "아이러브제이", "date": "3/20~4/12", "desc": "15만원 이상 구매 시 백팩 증정 (50개 한정)" },
+          { "brand": "아프리콧스튜디오", "date": "3/20~4/12", "desc": "구매 고객 '토곰 물총' 증정 / 트래블 패키지 10%할인" },
+          { "brand": "젤리멜로", "date": "3/20~4/12", "desc": "26S/S 전상품 10% 할인" },
+          { "brand": "캐리마켓", "date": "3/20~4/12", "desc": "18만원 이상 구매 시 트래블 파우치 증정" },
+          { "brand": "무냐무냐", "date": "3/20~4/12", "desc": "구매 고객 유아 손수건 증정" }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "head_title": "EXCLUSIVE FOR",
+    "head_sub": "GLOBAL GUESTS",
+    "head_date": "MAR 20 - APR 12",
+    "notice_title": "[Notice]",
+    "notice_list": [
+      "Applicable only to foreign passport holders and immediate tax refund customers.",
+      "All benefits may exclude certain items.",
+      "Gifts are limited in quantity and may end without prior notice."
+    ],
+    "sections": [
+      {
+        "category": "YOUNG FASHION & LIFE",
+        "location": "B2",
+        "items": [
+          { "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "Free passport case for foreign customers with purchase (Limited to 100)" },
+          { "brand": "SISTINA", "date": "3/20~3/26", "desc": "10% off spring items" },
+          { "brand": "HDEX", "date": "3/9~4/4", "desc": "10% off when following Instagram" },
+          { "brand": "LISTENING ROOM by ODE", "date": "3/20~4/4", "desc": "5% off BTS LP or CD in-store" },
+          { "brand": "Smith & Leather", "date": "3/20~4/4", "desc": "Free luggage tag with purchase" },
+          { "brand": "Calvin Klein Jeans", "date": "3/20~4/4", "desc": "10% off all items" },
+          { "brand": "Calvin Klein Underwear", "date": "3/20~4/4", "desc": "10% off all items" },
+          { "brand": "CITYBREEZE", "date": "3/20~4/4", "desc": "10% off all items" },
+          { "brand": "SATUR", "date": "3/20~3/31", "desc": "Up to 20% off 26 Spring new arrivals (excluding Summer items)" },
+          { "brand": "kuho plus", "date": "3/20~3/31", "desc": "5% off when uploading an IG story and tagging the official account" },
+          { "brand": "OIC", "date": "3/20~4/4", "desc": "Free socks with purchase over 200,000 KRW" },
+          { "brand": "ROCKFISH WEATHERWEAR", "date": "3/20~4/4", "desc": "10% off Mary Jane sneakers (excluding ILLIT collaboration)" },
+          { "brand": "MARITHÉ FRANÇOIS GIRBAUD", "date": "3/20~4/4", "desc": "Up to 30% off 26SS key items (items change weekly)" },
+          { "brand": "RONRON", "date": "3/20~3/31", "desc": "20% off all items" },
+          { "brand": "Stand Oil", "date": "3/25~3/31", "desc": "Carry-over shoes promo (New 5% / Running 10%)" },
+          { "brand": "depound", "date": "3/27~4/2", "desc": "Extra 10% off on purchases over 200,000 KRW" },
+          { "brand": "UNIFORM BRIDGE", "date": "3/20~3/31", "desc": "Extra 10% off 26SS" },
+          { "brand": "verte", "date": "3/23~3/31", "desc": "7% off all items, 17% off 2 new watches / Free mini tin case with purchase" },
+          { "brand": "verte", "date": "3/20~4/4", "desc": "Extra 5% off for WeChat Pay / Alipay purchases over 500,000 KRW" }
+        ]
+      },
+      {
+        "category": "COSMETICS",
+        "location": "1F",
+        "items": [
+          { "brand": "Nars", "date": "3/20~3/25, 4/1~4/12", "desc": "10% off when buying 2 or more items (excluding new items)" },
+          { "brand": "Sulwhasoo", "date": "3/20~4/12", "desc": "5% gift voucher for purchases over 300K/600K/1M KRW<br>Free 10-piece travel set for purchases over 200K KRW" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/12", "desc": "Free 8ml body wash with any purchase, 32ml body sample (4 types) with set purchase" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/5", "desc": "Extra 2ml EDC for purchases in the Global Guest Pop-up" }
+        ]
+      },
+      {
+        "category": "HOME DÉCOR",
+        "location": "4F",
+        "items": [
+          { "brand": "LEGODT", "date": "3/20~4/12", "desc": "10~20% off new travel items" },
+          { "brand": "Hériter", "date": "3/20~4/12", "desc": "5~10% off popular items" }
+        ]
+      },
+      {
+        "category": "KIDS & BABY",
+        "location": "5F",
+        "items": [
+          { "brand": "Absorba", "date": "3/20~4/12", "desc": "20~25% off all items" },
+          { "brand": "ETTOI", "date": "3/20~4/12", "desc": "Free gift with purchase over 100,000 KRW (Suitcase or Samantha Basket)" },
+          { "brand": "I LOVE J", "date": "3/20~4/12", "desc": "Free backpack with purchase over 150,000 KRW (Limited to 50)" },
+          { "brand": "Apricot Studios", "date": "3/20~4/12", "desc": "Free 'Togom Water Gun' with purchase / 10% off Travel Package" },
+          { "brand": "JELLY MALLOW", "date": "3/20~4/12", "desc": "10% off all 26S/S items" },
+          { "brand": "KARYMARKET", "date": "3/20~4/12", "desc": "Free travel pouch with purchase over 180,000 KRW" },
+          { "brand": "MOONYA MOONYA", "date": "3/20~4/12", "desc": "Free baby handkerchief with purchase" }
+        ]
+      }
+    ]
+  },
+  "tc": {
+    "head_title": "EXCLUSIVE FOR",
+    "head_sub": "GLOBAL GUESTS",
+    "head_date": "MAR 20 - APR 12",
+    "notice_title": "[注意事項]",
+    "notice_list": [
+      "僅適用於持有外國護照及即時退稅之顧客。",
+      "所有優惠可能不適用於部分商品。",
+      "贈品數量有限，送完為止，恕不另行通知。"
+    ],
+    "sections": [
+      {
+        "category": "YOUNG FASHION & LIFE",
+        "location": "B2",
+        "items": [
+          { "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "外國顧客購買即贈護照夾（限量100個，需出示護照）" },
+          { "brand": "SISTINA", "date": "3/20~3/26", "desc": "春季商品9折" },
+          { "brand": "HDEX", "date": "3/9~4/4", "desc": "追蹤Instagram享9折" },
+          { "brand": "LISTENING ROOM by ODE", "date": "3/20~4/4", "desc": "店內BTS LP或CD享95折" },
+          { "brand": "Smith & Leather", "date": "3/20~4/4", "desc": "購買產品即贈行李牌" },
+          { "brand": "Calvin Klein Jeans", "date": "3/20~4/4", "desc": "全品9折" },
+          { "brand": "Calvin Klein Underwear", "date": "3/20~4/4", "desc": "全品9折" },
+          { "brand": "CITYBREEZE", "date": "3/20~4/4", "desc": "全品9折" },
+          { "brand": "SATUR", "date": "3/20~3/31", "desc": "26春季新品最高8折（夏季商品除外）" },
+          { "brand": "kuho plus", "date": "3/20~3/31", "desc": "上傳IG限時動態並標記官方帳號享95折" },
+          { "brand": "OIC", "date": "3/20~4/4", "desc": "滿20萬韓元贈送襪子" },
+          { "brand": "ROCKFISH WEATHERWEAR", "date": "3/20~4/4", "desc": "瑪莉珍運動鞋9折（ILLIT聯名款除外）" },
+          { "brand": "MARITHÉ FRANÇOIS GIRBAUD", "date": "3/20~4/4", "desc": "26SS品牌主打商品最高7折（每週更換商品）" },
+          { "brand": "RONRON", "date": "3/20~3/31", "desc": "全品8折" },
+          { "brand": "Stand Oil", "date": "3/25~3/31", "desc": "現有經典鞋履系列促銷（新款95折 / 常規9折）" },
+          { "brand": "depound", "date": "3/27~4/2", "desc": "滿20萬韓元額外9折" },
+          { "brand": "UNIFORM BRIDGE", "date": "3/20~3/31", "desc": "26SS額外9折" },
+          { "brand": "verte", "date": "3/23~3/31", "desc": "全品93折，2款新腕錶83折 / 購買即贈迷你鐵盒" },
+          { "brand": "verte", "date": "3/20~4/4", "desc": "使用微信/支付寶滿50萬韓元額外95折" }
+        ]
+      },
+      {
+        "category": "COSMETICS",
+        "location": "1F",
+        "items": [
+          { "brand": "Nars", "date": "3/20~3/25, 4/1~4/12", "desc": "購買2件以上享9折（新品除外）" },
+          { "brand": "Sulwhasoo", "date": "3/20~4/12", "desc": "滿30/60/100萬韓元贈5%商品券<br>滿20萬韓元贈旅行裝10件套" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/12", "desc": "任意消費贈8ml沐浴露，購買套裝贈32ml身體護理試用品" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/5", "desc": "在國際顧客快閃店消費額外贈送2ml EDC" }
+        ]
+      },
+      {
+        "category": "HOME DÉCOR",
+        "location": "4F",
+        "items": [
+          { "brand": "LEGODT", "date": "3/20~4/12", "desc": "旅行新品8-9折" },
+          { "brand": "Hériter", "date": "3/20~4/12", "desc": "人氣商品9-95折" }
+        ]
+      },
+      {
+        "category": "KIDS & BABY",
+        "location": "5F",
+        "items": [
+          { "brand": "Absorba", "date": "3/20~4/12", "desc": "全品75-8折" },
+          { "brand": "ETTOI", "date": "3/20~4/12", "desc": "滿10萬韓元贈送禮品（行李箱或Samantha籃子）" },
+          { "brand": "I LOVE J", "date": "3/20~4/12", "desc": "滿15萬韓元贈送背包（限量50個）" },
+          { "brand": "Apricot Studios", "date": "3/20~4/12", "desc": "購買即贈Togom水槍 / 旅行套餐9折" },
+          { "brand": "JELLY MALLOW", "date": "3/20~4/12", "desc": "26S/S全品9折" },
+          { "brand": "KARYMARKET", "date": "3/20~4/12", "desc": "滿18萬韓元贈送旅行收納袋" },
+          { "brand": "MOONYA MOONYA", "date": "3/20~4/12", "desc": "購買即贈嬰兒手帕" }
+        ]
+      }
+    ]
+  },
+  "sc": {
+    "head_title": "EXCLUSIVE FOR",
+    "head_sub": "GLOBAL GUESTS",
+    "head_date": "MAR 20 - APR 12",
+    "notice_title": "[注意事项]",
+    "notice_list": [
+      "仅适用于持有外国护照及即时退税的顾客。",
+      "所有优惠可能不适用于部分商品。",
+      "赠品数量有限，送完为止，恕不另行通知。"
+    ],
+    "sections": [
+      {
+        "category": "YOUNG FASHION & LIFE",
+        "location": "B2",
+        "items": [
+          { "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "外国顾客购买即赠护照夹（限量100个，需出示护照）" },
+          { "brand": "SISTINA", "date": "3/20~3/26", "desc": "春季商品9折" },
+          { "brand": "HDEX", "date": "3/9~4/4", "desc": "关注Instagram享9折" },
+          { "brand": "LISTENING ROOM by ODE", "date": "3/20~4/4", "desc": "店内BTS LP或CD享95折" },
+          { "brand": "Smith & Leather", "date": "3/20~4/4", "desc": "购买产品即赠行李牌" },
+          { "brand": "Calvin Klein Jeans", "date": "3/20~4/4", "desc": "全品9折" },
+          { "brand": "Calvin Klein Underwear", "date": "3/20~4/4", "desc": "全品9折" },
+          { "brand": "CITYBREEZE", "date": "3/20~4/4", "desc": "全品9折" },
+          { "brand": "SATUR", "date": "3/20~3/31", "desc": "26春季新品最高8折（夏季商品除外）" },
+          { "brand": "kuho plus", "date": "3/20~3/31", "desc": "上传IG快拍并标记官方账号享95折" },
+          { "brand": "OIC", "date": "3/20~4/4", "desc": "满20万韩元赠送袜子" },
+          { "brand": "ROCKFISH WEATHERWEAR", "date": "3/20~4/4", "desc": "玛丽珍运动鞋9折（ILLIT联名款除外）" },
+          { "brand": "MARITHÉ FRANÇOIS GIRBAUD", "date": "3/20~4/4", "desc": "26SS品牌主打商品最高7折（每周更换商品）" },
+          { "brand": "RONRON", "date": "3/20~3/31", "desc": "全品8折" },
+          { "brand": "Stand Oil", "date": "3/25~3/31", "desc": "现有经典鞋履系列促销（新款95折 / 常规9折）" },
+          { "brand": "depound", "date": "3/27~4/2", "desc": "满20万韩元额外9折" },
+          { "brand": "UNIFORM BRIDGE", "date": "3/20~3/31", "desc": "26SS额外9折" },
+          { "brand": "verte", "date": "3/23~3/31", "desc": "全品93折，2款新腕表83折 / 购买即赠迷你铁盒" },
+          { "brand": "verte", "date": "3/20~4/4", "desc": "使用微信/支付宝满50万韩元额外95折" }
+        ]
+      },
+      {
+        "category": "COSMETICS",
+        "location": "1F",
+        "items": [
+          { "brand": "Nars", "date": "3/20~3/25, 4/1~4/12", "desc": "购买2件以上享9折（新品除外）" },
+          { "brand": "Sulwhasoo", "date": "3/20~4/12", "desc": "满30/60/100万韩元赠5%商品券<br>满20万韩元赠旅行装10件套" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/12", "desc": "任意消费赠8ml沐浴露，购买套装赠32ml身体护理小样" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/5", "desc": "在国际顾客快闪店消费额外赠送2ml EDC" }
+        ]
+      },
+      {
+        "category": "HOME DÉCOR",
+        "location": "4F",
+        "items": [
+          { "brand": "LEGODT", "date": "3/20~4/12", "desc": "旅行新品8-9折" },
+          { "brand": "Hériter", "date": "3/20~4/12", "desc": "人气商品9-95折" }
+        ]
+      },
+      {
+        "category": "KIDS & BABY",
+        "location": "5F",
+        "items": [
+          { "brand": "Absorba", "date": "3/20~4/12", "desc": "全品75-8折" },
+          { "brand": "ETTOI", "date": "3/20~4/12", "desc": "满10万韩元赠送礼品（手提箱或Samantha篮子）" },
+          { "brand": "I LOVE J", "date": "3/20~4/12", "desc": "满15万韩元赠送背包（限量50个）" },
+          { "brand": "Apricot Studios", "date": "3/20~4/12", "desc": "购买即赠Togom水枪 / 旅行套餐9折" },
+          { "brand": "JELLY MALLOW", "date": "3/20~4/12", "desc": "26S/S全品9折" },
+          { "brand": "KARYMARKET", "date": "3/20~4/12", "desc": "满18万韩元赠送旅行收纳袋" },
+          { "brand": "MOONYA MOONYA", "date": "3/20~4/12", "desc": "购买即赠婴儿手帕" }
+        ]
+      }
+    ]
+  },
+  "ja": {
+    "head_title": "EXCLUSIVE FOR",
+    "head_sub": "GLOBAL GUESTS",
+    "head_date": "MAR 20 - APR 12",
+    "notice_title": "[注意事項]",
+    "notice_list": [
+      "外国パスポートをお持ちの方、および即時還付対象のお客様にのみ適用されます。",
+      "すべての特典は一部対象外となる商品がございます。",
+      "贈呈品は数量限定のため、なくなり次第予告なく終了する場合がございます。"
+    ],
+    "sections": [
+      {
+        "category": "YOUNG FASHION & LIFE",
+        "location": "B2",
+        "items": [
+          { "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "外国人購入顧客にパスポートケース贈呈（100個限定）" },
+          { "brand": "SISTINA", "date": "3/20~3/26", "desc": "春商品10%割引" },
+          { "brand": "HDEX", "date": "3/9~4/4", "desc": "Instagramフォローで10%割引" },
+          { "brand": "LISTENING ROOM by ODE", "date": "3/20~4/4", "desc": "店内BTS LPまたはCD 5%割引" },
+          { "brand": "Smith & Leather", "date": "3/20~4/4", "desc": "製品購入時ラゲッジタグ贈呈" },
+          { "brand": "Calvin Klein Jeans", "date": "3/20~4/4", "desc": "全品10%割引" },
+          { "brand": "Calvin Klein Underwear", "date": "3/20~4/4", "desc": "全品10%割引" },
+          { "brand": "CITYBREEZE", "date": "3/20~4/4", "desc": "全品10%割引" },
+          { "brand": "SATUR", "date": "3/20~3/31", "desc": "26年春の新商品最大20%割引（夏商品を除く）" },
+          { "brand": "kuho plus", "date": "3/20~3/31", "desc": "IGストーリーアップロード＋タグ付けで5%割引" },
+          { "brand": "OIC", "date": "3/20~4/4", "desc": "20万ウォン以上のご購入で靴下贈呈" },
+          { "brand": "ROCKFISH WEATHERWEAR", "date": "3/20~4/4", "desc": "メリージェーンスニーカー10%割引（ILLITコラボ除く）" },
+          { "brand": "MARITHÉ FRANÇOIS GIRBAUD", "date": "3/20~4/4", "desc": "26SS主力商品最大30%割引（週ごとに品目変更）" },
+          { "brand": "RONRON", "date": "3/20~3/31", "desc": "全商品20%割引" },
+          { "brand": "Stand Oil", "date": "3/25~3/31", "desc": "既存シューズラインプロモーション（新規5% / ランニング10%）" },
+          { "brand": "depound", "date": "3/27~4/2", "desc": "20万ウォン以上のご購入でさらに10%割引" },
+          { "brand": "UNIFORM BRIDGE", "date": "3/20~3/31", "desc": "26SSさらに10%割引" },
+          { "brand": "verte", "date": "3/23~3/31", "desc": "全製品7%OFF、新作時計17%OFF / ご購入でミニティンケース贈呈" },
+          { "brand": "verte", "date": "3/20~4/4", "desc": "WeChat Pay / Alipayで50万ウォン以上ご購入でさらに5%OFF" }
+        ]
+      },
+      {
+        "category": "COSMETICS",
+        "location": "1F",
+        "items": [
+          { "brand": "Nars", "date": "3/20~3/25, 4/1~4/12", "desc": "2点以上のご購入で10%OFF（新商品を除く）" },
+          { "brand": "Sulwhasoo", "date": "3/20~4/12", "desc": "30/60/100万ウォン以上ご購入で5%商品券贈呈<br>20万ウォン以上のご購入で旅行用10点セット贈呈" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/12", "desc": "購入時ボディウォッシュ8ml贈呈、セットご購入でボディサンプル贈呈" },
+          { "brand": "Santa Maria Novella", "date": "3/20~4/5", "desc": "ポップアップストア内でのご購入でEDC 2ml追加贈呈" }
+        ]
+      },
+      {
+        "category": "HOME DÉCOR",
+        "location": "4F",
+        "items": [
+          { "brand": "LEGODT", "date": "3/20~4/12", "desc": "トラベル新商品10〜20%割引" },
+          { "brand": "Hériter", "date": "3/20~4/12", "desc": "人気商品5〜10%割引" }
+        ]
+      },
+      {
+        "category": "KIDS & BABY",
+        "location": "5F",
+        "items": [
+          { "brand": "Absorba", "date": "3/20~4/12", "desc": "全商品20〜25%割引" },
+          { "brand": "ETTOI", "date": "3/20~4/12", "desc": "10万ウォン以上のご購入で景品贈呈" },
+          { "brand": "I LOVE J", "date": "3/20~4/12", "desc": "15万ウォン以上のご購入でバックパック贈呈（50個限定）" },
+          { "brand": "Apricot Studios", "date": "3/20~4/12", "desc": "ご購入で「トゴム水鉄砲」贈呈 / トラベルパッケージ10%割引" },
+          { "brand": "JELLY MALLOW", "date": "3/20~4/12", "desc": "26S/S全商品10%割引" },
+          { "brand": "KARYMARKET", "date": "3/20~4/12", "desc": "18万ウォン以上のご購入でトラベルポーチ贈呈" },
+          { "brand": "MOONYA MOONYA", "date": "3/20~4/12", "desc": "ご購入のお客様にベビーハンカチ贈呈" }
+        ]
+      }
+    ]
+  }
 }
