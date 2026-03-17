@@ -1,55 +1,173 @@
-{
-  "en": {
-    "headers": ["Category", "Location", "Brand", "Period", "Details"],
-    "notice_title": "[Notice]",
-    "notice_list": [
-      "Applicable only to foreign passport holders and immediate tax refund customers.",
-      "All benefits may exclude certain items.",
-      "Gifts are limited in quantity and may end without prior notice."
-    ],
-    "items": [
-      { "cat": "YOUNG FASHION", "loc": "B2", "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "Free passport case with purchase (Limit 100)" },
-      { "cat": "YOUNG FASHION", "loc": "B2", "brand": "SISTINA", "date": "3/20~3/26", "desc": "10% off spring items" },
-      { "cat": "YOUNG FASHION", "loc": "B2", "brand": "HDEX", "date": "3/9~4/4", "desc": "10% off when following Instagram" },
-      { "cat": "COSMETICS", "loc": "1F", "brand": "Nars", "date": "3/20~4/12", "desc": "10% off when buying 2 or more items" },
-      { "cat": "COSMETICS", "loc": "1F", "brand": "Sulwhasoo", "date": "3/20~4/12", "desc": "5% gift voucher for purchases over 300K/600K/1M KRW" },
-      { "cat": "KIDS & BABY", "loc": "5F", "brand": "Absorba", "date": "3/20~4/12", "desc": "20~25% off all items" }
-    ]
-  },
-  "tc": {
-    "headers": ["分類", "位置", "品牌", "期間", "內容"],
-    "notice_title": "[注意事項]",
-    "notice_list": [
-      "僅適用於持有外國護照及即時退稅之顧客。",
-      "贈品數量有限，送完為止，恕不另行通知。"
-    ],
-    "items": [
-      { "cat": "潮流時尚", "loc": "B2", "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "外國顧客購買即贈護照夾（限量100個）" },
-      { "cat": "化妝品", "loc": "1F", "brand": "Nars", "date": "3/20~4/12", "desc": "購買2件以上享9折" }
-    ]
-  },
-  "sc": {
-    "headers": ["分类", "位置", "品牌", "期间", "内容"],
-    "notice_title": "[注意事项]",
-    "notice_list": [
-      "仅适用于持有外国护照及即时退税的顾客。",
-      "赠品数量有限，送完为止，恕不另行通知。"
-    ],
-    "items": [
-      { "cat": "潮流时尚", "loc": "B2", "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "外国顾客购买即赠护照夹（限量100个）" },
-      { "cat": "化妆品", "loc": "1F", "brand": "Nars", "date": "3/20~4/12", "desc": "购买2件以上享9折" }
-    ]
-  },
-  "ja": {
-    "headers": ["区分", "位置", "ブランド", "期間", "内容"],
-    "notice_title": "[注意事項]",
-    "notice_list": [
-      "外国パスポートをお持ちの方、および即時還付対象のお客様にのみ適用されます。",
-      "贈呈品は数量限定のため、なくなり次第予告なく終了する場合がございます。"
-    ],
-    "items": [
-      { "cat": "ファッション", "loc": "B2", "brand": "Deus Ex Machina", "date": "3/20~4/4", "desc": "外国人購入顧客にパスポートケース贈呈（100個限定）" },
-      { "cat": "化粧品", "loc": "1F", "brand": "Nars", "date": "3/20~4/12", "desc": "2点以上のご購入で10%OFF" }
-    ]
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Global Guests Special Offers</title>
+    <style>
+        /* 보라색 우주 테마 배경 */
+        :root { --bg-dark: #120A2B; --purple-main: #622EF1; }
+        body {
+            margin: 0; padding: 0; background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at top right, #381b7a 0%, var(--bg-dark) 60%);
+            color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        :lang(ko) { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
+        :lang(zh-Hant) { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
+        :lang(zh-Hans) { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+        :lang(ja) { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; }
+
+        .header { text-align: center; padding: 40px 20px 20px; }
+        .header h1 {
+            font-size: 30px; font-weight: 900; margin: 0; letter-spacing: 1px;
+            background: linear-gradient(to right, #fff, #D9C5FF);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header h2 { font-size: 16px; font-weight: 500; margin: 5px 0 15px; color: #E0D4FF; letter-spacing: 2px; }
+        .date-badge {
+            display: inline-block; background: rgba(158, 123, 255, 0.2);
+            border: 1px solid rgba(158, 123, 255, 0.5); color: #E0D4FF;
+            padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;
+        }
+
+        .tabs {
+            display: flex; gap: 8px; padding: 0 15px 20px; justify-content: center;
+            overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;
+        }
+        .tab-btn {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc; padding: 10px 18px; border-radius: 25px;
+            font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--purple-main); color: #fff; border-color: var(--purple-main);
+            box-shadow: 0 0 15px rgba(98, 46, 241, 0.6);
+        }
+
+        .container { padding: 0 15px 50px; max-width: 1000px; margin: 0 auto; }
+        .table-wrapper {
+            width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+            background: rgba(0, 0, 0, 0.2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);
+        }
+        table { width: 100%; min-width: 700px; border-collapse: collapse; text-align: center; }
+        th, td { padding: 12px 10px; border: 1px solid rgba(255,255,255,0.15); font-size: 13px; line-height: 1.4; }
+        th { background: rgba(98, 46, 241, 0.4); color: #E0D4FF; font-weight: bold; position: sticky; top: 0; }
+        td { color: #f4f4f4; }
+        .text-left { text-align: left; }
+        .brand-name { font-weight: bold; color: #fff; font-size: 14px; }
+        
+        .notice-box {
+            background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2);
+            border-radius: 12px; padding: 20px; margin-top: 20px;
+        }
+        .notice-title { font-size: 14px; font-weight: bold; color: #E0D4FF; margin-bottom: 10px; }
+        .notice-list { margin: 0; padding-left: 18px; font-size: 13px; color: #bbb; }
+        .notice-list li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>EXCLUSIVE FOR</h1>
+        <h2>GLOBAL GUESTS</h2>
+        <div class="date-badge">MAR 20 - APR 12</div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="loadContent('en')">English</button>
+        <button class="tab-btn" onclick="loadContent('tc')">中文(繁體)</button>
+        <button class="tab-btn" onclick="loadContent('sc')">中文(简体)</button>
+        <button class="tab-btn" onclick="loadContent('ja')">日本語</button>
+    </div>
+
+    <div class="container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr id="thead-row"></tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+        <div class="notice-box">
+            <div class="notice-title" id="notice-title">[Notice]</div>
+            <ul class="notice-list" id="notice-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        let globalData = {};
+
+        // 언어별 표 헤더 및 기본 유의사항 설정
+        const uiText = {
+            'en': { headers: ["Category", "Location", "Brand", "Period", "Details"], noticeTitle: "[Notice]", notice: ["Applicable to foreign passport holders.", "Gifts are limited in quantity."] },
+            'tc': { headers: ["分類", "位置", "品牌", "期間", "內容"], noticeTitle: "[注意事項]", notice: ["僅適用於持有外國護照之顧客。", "贈品數量有限，送完為止。"] },
+            'sc': { headers: ["分类", "位置", "品牌", "期间", "内容"], noticeTitle: "[注意事项]", notice: ["仅适用于持有外国护照的顾客。", "赠品数量有限，送完为止。"] },
+            'ja': { headers: ["区分", "位置", "ブランド", "期間", "内容"], noticeTitle: "[注意事項]", notice: ["外国パスポートをお持ちの方にのみ適用。", "贈呈品は数量限定のため、なくなり次第終了。"] }
+        };
+
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                globalData = data;
+                loadContent('en'); 
+            })
+            .catch(err => console.error("데이터 로드 실패:", err));
+
+        function loadContent(lang) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            if(event) event.currentTarget.classList.add('active');
+
+            const langCode = lang === 'tc' ? 'zh-Hant' : (lang === 'sc' ? 'zh-Hans' : lang);
+            document.documentElement.lang = langCode;
+
+            const d = globalData[lang];
+            if(!d) return;
+
+            // UI 텍스트 적용 (JSON에 없으면 기본값 사용)
+            const textData = uiText[lang] || uiText['en'];
+            document.getElementById('notice-title').innerText = d.notice_title || textData.noticeTitle;
+            
+            const notices = d.notice_list || textData.notice;
+            document.getElementById('notice-list').innerHTML = notices.map(n => `<li>${n}</li>`).join('');
+            document.getElementById('thead-row').innerHTML = textData.headers.map(h => `<th>${h}</th>`).join('');
+
+            // JSON 데이터 읽어오기 (이전 sections 방식 & 새로운 items 방식 모두 지원!)
+            let bodyHtml = '';
+            
+            if (d.sections) {
+                // 이전 JSON 방식 (category가 묶여있는 형태)
+                d.sections.forEach(sec => {
+                    sec.items.forEach(item => {
+                        bodyHtml += `
+                        <tr>
+                            <td style="color: #bbb;">${sec.category || 'N/A'}</td>
+                            <td>${sec.location || 'N/A'}</td>
+                            <td class="brand-name text-left">${item.brand}</td>
+                            <td style="font-size: 12px;">${item.date}</td>
+                            <td class="text-left">${item.desc}</td>
+                        </tr>`;
+                    });
+                });
+            } else if (d.items) {
+                // 새로운 JSON 방식 (각 항목별로 카테고리가 있는 형태)
+                d.items.forEach(item => {
+                    bodyHtml += `
+                    <tr>
+                        <td style="color: #bbb;">${item.cat || ''}</td>
+                        <td>${item.loc || ''}</td>
+                        <td class="brand-name text-left">${item.brand}</td>
+                        <td style="font-size: 12px;">${item.date}</td>
+                        <td class="text-left">${item.desc}</td>
+                    </tr>`;
+                });
+            } else {
+                bodyHtml = `<tr><td colspan="5">데이터가 없습니다.</td></tr>`;
+            }
+
+            document.getElementById('tbody').innerHTML = bodyHtml;
+        }
+    </script>
+</body>
+</html>
