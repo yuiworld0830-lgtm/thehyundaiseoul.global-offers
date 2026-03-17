@@ -31,6 +31,7 @@
         .text-left { text-align: left; }
         .brand-name { font-weight: bold; color: #fff; font-size: 14px; }
         
+        /* Notice 스타일 복구 */
         .notice-box { background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 20px; margin-top: 20px; }
         .notice-title { font-size: 14px; font-weight: bold; color: #E0D4FF; margin-bottom: 10px; }
         .notice-list { margin: 0; padding-left: 18px; font-size: 13px; color: #bbb; }
@@ -58,12 +59,17 @@
                 <thead>
                     <tr id="thead-row"></tr>
                 </thead>
-                <tbody id="tbody"></tbody>
+                <tbody id="tbody">
+                    <tr><td colspan="5">데이터를 불러오는 중입니다...</td></tr>
+                </tbody>
             </table>
         </div>
-        <div class="notice-box">
+        
+        <div class="notice-box" id="notice-container">
             <div class="notice-title" id="notice-title">[Notice]</div>
-            <ul class="notice-list" id="notice-list"></ul>
+            <ul class="notice-list" id="notice-list">
+                <li>데이터를 불러오는 중입니다...</li>
+            </ul>
         </div>
     </div>
 
@@ -77,17 +83,21 @@
             'ja': { headers: ["区分", "位置", "ブランド", "期間", "内容"], noticeTitle: "[注意事項]", notice: ["外国パスポートをお持ちの方にのみ適用。", "贈呈品は数量限定のため、なくなり次第終了。"] }
         };
 
-        // 스마트폰의 강력한 캐시를 뚫고 항상 최신 데이터를 불러옵니다.
         fetch('data.json?v=' + new Date().getTime())
             .then(res => res.json())
             .then(data => {
                 globalData = data;
                 loadContent('en'); 
             })
-            .catch(err => console.error("데이터 로드 실패:", err));
+            .catch(err => {
+                console.error("데이터 로드 실패:", err);
+                // JSON 파일에 문법 오류가 있을 때 빨간색으로 에러 메시지 띄우기!
+                document.getElementById('thead-row').innerHTML = `<th>오류 발생</th>`;
+                document.getElementById('tbody').innerHTML = `<tr><td colspan="5" style="color:#ff6b6b; padding: 30px; font-weight: bold;">🚨 data.json 파일을 읽을 수 없습니다!<br><br>JSON 코드 안에 쉼표(,)가 빠졌거나 따옴표("")가 잘못 들어간 곳이 있습니다. 코드를 확인해주세요.</td></tr>`;
+                document.getElementById('notice-list').innerHTML = `<li>데이터가 없어 유의사항을 불러올 수 없습니다.</li>`;
+            });
 
         function loadContent(lang) {
-            // 모바일 에러의 원인이었던 event 객체를 삭제하고 더 안전한 방식으로 변경했습니다.
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById('btn-' + lang);
             if(activeBtn) activeBtn.classList.add('active');
@@ -98,13 +108,16 @@
             const d = globalData[lang];
             if(!d) return;
 
+            // 유의사항 업데이트
             const textData = uiText[lang] || uiText['en'];
             document.getElementById('notice-title').innerText = d.notice_title || textData.noticeTitle;
-            
             const notices = d.notice_list || textData.notice;
             document.getElementById('notice-list').innerHTML = notices.map(n => `<li>${n}</li>`).join('');
+            
+            // 표 헤더 업데이트
             document.getElementById('thead-row').innerHTML = textData.headers.map(h => `<th>${h}</th>`).join('');
 
+            // 표 데이터 업데이트
             let bodyHtml = '';
             
             if (d.items) {
