@@ -1,0 +1,18 @@
+{
+  "en": [
+    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "Free passport case for foreign customers with purchase" },
+    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "10% off when buying 2 or more items" }
+  ],
+  "tc": [
+    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "外國顧客購買?贈護照夾" },
+    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "購買2件以上享9折" }
+  ],
+  "sc": [
+    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "外??客?????照?" },
+    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "??2件以上享9折" }
+  ],
+  "ja": [
+    { "category": "Young Fashion & Life", "location": "B2", "brand": "Deus Ex Machina", "period": "3/20~4/4", "details": "外?人購入顧客にパスポ?トケ?ス贈呈" },
+    { "category": "Cosmetics", "location": "1F", "brand": "Nars", "period": "3/20~4/12", "details": "2点以上のご購入で10%OFF" }
+  ]
+}
